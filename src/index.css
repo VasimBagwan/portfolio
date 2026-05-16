@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- base override for navbar glass effect (optional) --- */
+.navbar {
+  backdrop-filter: blur(6px);
+}
+
+/* --- DaisyUI plugin must be used via tailwind.config.js plugin -> do not use @plugin in CSS --- */
+
+/* Light theme variables (used for additional explicit text colors) */
+html[data-theme="light"] {
+  --site-bg: #ffffff;
+  --site-text: #0f172a;
+  --site-muted: #6b7280;
+  --card-bg: rgba(255, 255, 255, 0.6);
+}
+
+/* Dark theme variables */
+html[data-theme="dark"] {
+  --site-bg: #0b1220;
+  --site-text: #e6eef8;
+  --site-muted: #94a3b8;
+  --card-bg: rgba(6, 8, 15, 0.6);
+}
+
+/* apply variables to body and common elements so non-daisy components also look correct */
+body {
+  background-color: var(--site-bg);
+  color: var(--site-text);
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+/* muted helper */
+.text-muted {
+  color: var(--site-muted) !important;
+}
+
+/* card background helper */
+.card-bg {
+  background: var(--card-bg);
+}
+
+/* anchor default color using daisyUI -- fallback to primary */
+a {
+  color: inherit;
+}
+
+/* ensure elements using Tailwind's text-base-content follow daisyUI variable */
+html[data-theme="light"] .text-base-content {
+  color: var(--site-text);
+}
+html[data-theme="dark"] .text-base-content {
+  color: var(--site-text);
+}
+
+/* Small accessibility boost: focus ring */
+:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+  border-radius: 6px;
+}
