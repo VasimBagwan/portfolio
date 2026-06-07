@@ -51,6 +51,7 @@ a {
 html[data-theme="light"] .text-base-content {
   color: var(--site-text);
 }
+
 html[data-theme="dark"] .text-base-content {
   color: var(--site-text);
 }

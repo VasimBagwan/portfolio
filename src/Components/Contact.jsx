@@ -126,15 +126,41 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative w-full min-h-screen flex items-center py-24"
-      style={{
-        backgroundImage: "url('/contact.jpg')",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-      }}
+      className="relative w-full min-h-screen flex items-center py-24 overflow-hidden"
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/30" />
+      {/* ── Video Background ── */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "center",
+          zIndex: 0,
+        }}
+      >
+        <source
+          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_083109_283f3553-e28f-428b-a723-d639c617eb2b.mp4"
+          type="video/mp4"
+        />
+      </video>
+
+      {/* ── Dark overlay for readability ── */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(135deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.50) 60%, rgba(0,0,0,0.70) 100%)",
+          zIndex: 1,
+        }}
+      />
 
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
@@ -192,9 +218,8 @@ export default function Contact() {
                       name: e.target.value,
                     })
                   }
-                  className={`input input-bordered w-full ${
-                    errors.name ? "input-error" : ""
-                  }`}
+                  className={`input input-bordered w-full ${errors.name ? "input-error" : ""
+                    }`}
                 />
 
                 {errors.name && (
@@ -223,9 +248,8 @@ export default function Contact() {
                       email: e.target.value,
                     })
                   }
-                  className={`input input-bordered w-full ${
-                    errors.email ? "input-error" : ""
-                  }`}
+                  className={`input input-bordered w-full ${errors.email ? "input-error" : ""
+                    }`}
                 />
 
                 {errors.email && (
@@ -254,9 +278,8 @@ export default function Contact() {
                       message: e.target.value,
                     })
                   }
-                  className={`textarea textarea-bordered w-full ${
-                    errors.message ? "textarea-error" : ""
-                  }`}
+                  className={`textarea textarea-bordered w-full ${errors.message ? "textarea-error" : ""
+                    }`}
                 />
 
                 {errors.message && (

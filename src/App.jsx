@@ -12,10 +12,15 @@ import Projects from "./Components/Projects";
 import Resume from "./Components/Resume";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
+import FallingStars from "./Components/FallingStars";
+
 
 function App() {
   return (
     <BrowserRouter>
+
+      {/* Global Falling Stars Background */}
+      <FallingStars />
 
       {/* Navbar */}
       <Navbar />
