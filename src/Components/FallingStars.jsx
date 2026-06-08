@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const DEFAULT_STAR_COUNT = 120;
+const DEFAULT_STAR_COUNT = 60;
 
 function randomBetween(a, b) {
   return a + Math.random() * (b - a);
@@ -108,10 +108,12 @@ export default function FallingStars({
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
         ctx.fillStyle   = `${s.colour}${s.op})`;
-        ctx.shadowBlur  = s.radius * 6;
-        ctx.shadowColor = `${s.colour}0.8)`;
-        ctx.fill();
-        ctx.shadowBlur  = 0;
+        if (s.tail > 0) {
+  ctx.shadowBlur  = s.radius * 6;
+  ctx.shadowColor = `${s.colour}0.8)`;
+}
+ctx.fill();
+ctx.shadowBlur = 0;
       });
 
       animId = requestAnimationFrame(draw);
