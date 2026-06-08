@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import fahimF from "/f1.jpg";
+import vasimB from "/f1.jpg";
 import FallingStars from "./FallingStars";
 
 const TYPED_WORDS = ["Backend Developer", "Programmer", "Problem Solver"];
@@ -174,7 +174,7 @@ export default function Home() {
             <div className="relative">
               <div className="absolute inset-0 bg-cyan-400/25 rounded-full blur-3xl scale-110" />
               <div className="relative w-52 h-52 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full border-4 border-cyan-400 shadow-2xl overflow-hidden floaty">
-                <img src={fahimF} alt="Vasim" className="w-full h-full object-cover" />
+                <img src={vasimB} alt="Vasim" className="w-full h-full object-cover" />
               </div>
               <div
                 className="absolute inset-[-10px] rounded-full border border-cyan-400/25 animate-spin"
