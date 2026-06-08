@@ -11,14 +11,16 @@ export default function Resume() {
   const [showPass, setShowPass] = useState(false);
 
   const handleUnlock = () => {
-    if (input === CORRECT_PASSWORD) {
-      setUnlocked(true);
-      setError("");
-    } else {
-      setError("Wrong password! Please try again.");
-      setInput("");
-    }
-  };
+  if (input === CORRECT_PASSWORD) {
+    setError("");
+
+    // Direct PDF open
+    window.open("/vasim_resume.pdf", "_blank");
+  } else {
+    setError("Wrong password! Please try again.");
+    setInput("");
+  }
+};
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") handleUnlock();
